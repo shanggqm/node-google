@@ -17,15 +17,20 @@
   "author": "JP Richardson <jprichardson@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "acorn": "^6.1.1",
     "cheerio": "^0.19.0",
     "request": "^2.54.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "standard": "5.x"
+    "babel-eslint": "^10.0.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0"
   },
   "main": "./lib/google",
   "scripts": {
-    "test": "standard && mocha"
+    "lint": "eslint ./lib/",
+    "test": "npm run lint & istanbul cover _mocha -- test/ --no-timeouts"
   }
 }
